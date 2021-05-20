@@ -21,7 +21,7 @@ Create table posts (
 	post_id int(12) not null auto_increment,
 	user_id int(12) not null, 
 	date_posted date not null,
-	content_posted varchar(6000) not null,
+	content_posted longblob not null,
 	Primary key(post_id),
 	Foreign key (user_id) references user(id)
 );
@@ -31,7 +31,7 @@ Create table comments(
 	post_id int(12) not null,
 	user_id int(12) not null,
 	date_commented date not null,
-	content_commented varchar(6000) not null,
+	content_commented longblob not null,
 	Primary key (comment_id),
 	Foreign key (post_id) references posts(post_id),
 	Foreign key (user_id) references user(id)
